@@ -1,0 +1,15 @@
+@charset "UFT-8";
+
+body{
+    padding-bottom: 500px;
+}
+
+div{
+    margin-bottom: 50px;
+    padding: 10;
+}
+
+div input,
+div label{
+    display: block;
+}
