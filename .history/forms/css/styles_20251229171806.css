@@ -1,0 +1,26 @@
+@charset "UFT-8";
+
+body{
+    padding-bottom: 500px;
+}
+
+div{
+    margin-bottom: 50px;
+}
+
+select{
+    margin: 10px;
+}
+
+div input,
+div label{
+    display: block;
+    margin: 10px;
+    position: relative;
+}
+
+.radio label,
+.radio input,
+.radio span {
+    display: inline-block;
+}

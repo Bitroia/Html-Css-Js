@@ -1,0 +1,17 @@
+@charset "UFT-8";
+
+/*reset*/
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background-color: #f0ebf8;
+}
+
+h1,h2,h3{
+    background-color: rgba(26, 17, 17, 0.33);
+}
