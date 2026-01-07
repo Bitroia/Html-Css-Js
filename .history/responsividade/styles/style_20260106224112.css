@@ -1,0 +1,10 @@
+@charset "UFT-8";
+
+
+h1{
+    color: red;
+}
+
+@media screen and { max-width: 500px;
+    
+}
