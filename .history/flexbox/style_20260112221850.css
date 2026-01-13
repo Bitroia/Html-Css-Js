@@ -1,0 +1,39 @@
+/*flex*/
+
+.flex{
+    display: flex;
+    background-color: #ddd;
+    margin-bottom: 20px;
+}
+
+body{
+    padding-bottom: 500px;
+}
+
+/*flex column*/
+
+.flex-column{
+    background-color: #ccc;
+    display: flex;
+    flex-direction: column;
+}
+
+/*wrap*/
+
+.wrap{
+    display: flex;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.box{
+    height: 40px;
+    width: 33%;
+    border: 1px solid red;
+}
+
+/*justify-content */
+
+.center{
+
+}

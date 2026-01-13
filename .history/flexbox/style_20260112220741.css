@@ -1,0 +1,23 @@
+/*flex*/
+
+.flex{
+    display: flex;
+    background-color: #ddd;
+    margin-bottom: 20px;
+}
+
+body{
+    padding-bottom: 500px;
+}
+
+/*flex column*/
+
+.flex-column{
+    background-color: #ccc;
+    display: flex;
+    flex-direction: column;
+}
+
+/*wrap*/
+
+.

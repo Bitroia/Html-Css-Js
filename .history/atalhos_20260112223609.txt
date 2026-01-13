@@ -1,0 +1,3 @@
+shift + alt + F = indentar
+ctrl + k + c = comentario
+/**/ = comentario css
