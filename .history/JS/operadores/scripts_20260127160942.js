@@ -9,13 +9,17 @@ console.log(2+4);
 console.log(10-5);
 console.log(5*8);
 console.log(4/3);
+
 console.log(3+8*4)
 
 // special numbers
 
 console.log(typeof Infinity);
+
 console.log(typeof -Infinity);
+
 console.log(12*"asd");
+
 console.log(typeof NaN);
 // strings
 
@@ -31,6 +35,7 @@ console.log("Espaçamento de tab")
 // Concatenação
 
 console.log("Oi," + "tudo" + "bem?");
+
 
 // template strings
 
@@ -79,12 +84,5 @@ console.log(null == undefined);
 console.log(null == false);
 console.log(undefined == false);
 
+
 */
-
-// mudança de tipos
-
-console.log(5*null);
-console.log("teste"* "opa");
-console.log("10" + 1);
-console.log("10" - 1);
-

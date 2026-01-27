@@ -14,6 +14,7 @@ console.log(3+8*4)
 // special numbers
 
 console.log(typeof Infinity);
+
 console.log(typeof -Infinity);
 console.log(12*"asd");
 console.log(typeof NaN);
@@ -79,12 +80,5 @@ console.log(null == undefined);
 console.log(null == false);
 console.log(undefined == false);
 
+
 */
-
-// mudança de tipos
-
-console.log(5*null);
-console.log("teste"* "opa");
-console.log("10" + 1);
-console.log("10" - 1);
-

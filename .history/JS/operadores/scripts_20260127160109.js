@@ -9,13 +9,17 @@ console.log(2+4);
 console.log(10-5);
 console.log(5*8);
 console.log(4/3);
+
 console.log(3+8*4)
 
 // special numbers
 
 console.log(typeof Infinity);
+
 console.log(typeof -Infinity);
+
 console.log(12*"asd");
+
 console.log(typeof NaN);
 // strings
 
@@ -32,9 +36,11 @@ console.log("Espaçamento de tab")
 
 console.log("Oi," + "tudo" + "bem?");
 
+
 // template strings
 
 console.log(`A soma de 2 + 2 é: ${2+2}`);
+
 console.log(`Podemos executar qualquer coisa aqui ${console.log("teste")}`);
 
 // boolean
@@ -55,6 +61,7 @@ console.log(10 !=9);
 // idêntico
 
 console.log(9== "9");
+
 console.log(9==="9");
 console.log(9 !== "9");
 
@@ -69,22 +76,8 @@ console.log(5>2 || 5>100);
 console.log(!true);
 console.log(!5 > 2)
 
+*/
 
 // empty values
 
-console.log (typeof null, typeof undefined);
-
-console.log(null === undefined);
-console.log(null == undefined);
-console.log(null == false);
-console.log(undefined == false);
-
-*/
-
-// mudança de tipos
-
-console.log(5*null);
-console.log("teste"* "opa");
-console.log("10" + 1);
-console.log("10" - 1);
 
