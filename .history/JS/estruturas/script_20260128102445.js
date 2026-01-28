@@ -74,92 +74,28 @@ console.log("Teste!");
 console.error("erro!");
 console.warn("aviso!");
 
+*/
 
 //if
 
 const m = 10;
 
 if (m > 5) {
-  console.log("M é maior que 5!");
+    console.log("M é maior que 5!")
 }
 
 const user = "João";
 
-if (user === "João") {
-  console.log("Olá, João!");
+if(user === "João"){
+    console.log("Olá, João!");
 }
 
-if (user === "Maria") {
-  console.log("Olá, Maria!");
+if(user === "Maria"){
+    console.log("Olá, Maria!");
 }
 
 console.log(user === "João", user === "Maria");
 
 //else
 
-const loggedIn = false;
-
-if (loggedIn) {
-  console.log("Está autenticado!");
-} else {
-  console.log("Não está autenticado!");
-}
-
-const q = 10;
-const w = 15;
-
-if (q > 5 && w > 20){
-    console.log("Números mais altos");
-} else {
-    console.log("Os números não são mais altos!");
-}
-
-//else if 
-
-if (1 >2){
-    console.log("Teste");
-} else if (2 > 3){
-  console.log("teste 2");
-} else if (5 > 1){
-  console.log("Agora sim");
-}
-
-const userName = "Matheus"
-const userAge = 31
-
-if(userName === "José"){
-  console.log("Bem vindo, José!");
-} else if (userName === "Matheus" && userAge === 31) {
-  console.log(`Olá ${userName}, você tem ${userAge} anos!`);
-}
-else {
-  console.log("Nenhuma condição aceita!");
-}
-
-//while
-
-let p = 0;
-
-while(p<5){
-  console.log(`Repetindo${p}`);
-  p = p + 1;
-}  
-
-//loop infinito
-
-let x=10
-
-while(x>5){
-console.log(`Repetindo`);
-}
-
-*/
-
-//do while
-
-let o =10;
-
-do{
-  console.log(`Valor de o: ${o}`);
-  o--;
-} while(o > 1);
+    

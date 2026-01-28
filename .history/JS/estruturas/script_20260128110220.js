@@ -149,17 +149,6 @@ while(p<5){
 
 let x=10
 
-while(x>5){
-console.log(`Repetindo`);
-}
+while(x>5){}
 
 */
-
-//do while
-
-let o =10;
-
-do{
-  console.log(`Valor de o: ${o}`);
-  o--;
-} while(o > 1);
