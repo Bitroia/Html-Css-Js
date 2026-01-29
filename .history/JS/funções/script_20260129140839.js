@@ -1,0 +1,28 @@
+//criando uma função
+
+function minhaFuncao() {
+  console.log("Testando");
+}
+
+minhaFuncao();
+
+const minhaFuncaoEmVariavel = function () {
+  console.log("Função em variável");
+};
+
+minhaFuncaoEmVariavel();
+
+function funcaoComParametro(txt) {
+  console.log(`Imprimindo: ${txt}`);
+}
+
+funcaoComParametro("alguma coisa")
+funcaoComParametro("outra coisa")
+
+//return
+
+const a = 10;
+const b = 20;
+const c = 10;
+const d = 10;
+
