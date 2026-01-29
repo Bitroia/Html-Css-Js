@@ -210,8 +210,7 @@ for (let s = 0; s < 10; s = s + 1) {
   }
   console.log(s);
 }
-  
-*/ 
+  */
 
 //switch
 
@@ -242,8 +241,6 @@ switch (l) {
     console.log("L é 100!");
   case 10:
     console.log("L é 10!");
-  default:
-    console.log("L não foi encontrado!");
+    default:
+      console.log("L não foi encontrado!")
 }
-
-
