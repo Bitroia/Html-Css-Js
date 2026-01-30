@@ -1,0 +1,3 @@
+// arrays
+
+const lista = []
