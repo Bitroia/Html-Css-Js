@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistemas IRIS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <nav class="menu">
+            <div class="logo">IRIS</div>
+            <ul>
+                <li><a href="#">Menu</a></li>
+                <li><a href="#">Perfil</a></li>
+                <li><a href="#">Informações</a></li>
+            </ul>
+        </nav>
+        <div class="cardinformationsuser">
+            <img src="img/user.jpg" alt="employeephoto">
+            <div>
+                <p>Nome do funcionário</p>
+                <p>Nome de usuário</p>
+            </div>
+        </div>
+
+        <div class="buttonscards">
+            <input type="button" value="Ocorrências">
+            <input type="button" value="Avisos">
+            <input type="button" value="Assinatura Digital">
+        </div>
+
+        <div class="systemlist">
+            <h3 class="filtertitle">Filtros</h3>
+            <label for="type">Tipo do sistema:</label>
+            <select id="tipoSistema">
+                <option value="all">Todos os sistemas</option>
+                <option value="adm">Administrativos</option>
+                <option value="assist">Assistenciais</option>
+            </select>
+            <label for="search">Buscar Sistema:</label>
+            <input type="text" placeholder="Digite o nome do sistema...">
+            <input type="button" value="Limpar Filtro">
+        </div>
+        <div class="principalcards">
+            <article>
+                <a href="" class="linkcard">
+                    <h3 class="pcardstitle">SIH</h3>
+                    <figure class="iconcard"><img src="img/cruz.png" alt=""></figure>
+                    <p class="pcards">Equipe Responsável</p>
+                    <p class="pcards">Data de Atualização</p>
+                    <p class="pcards">Versão 1.17.008</p>
+                </a>
+            </article>
+            <article>
+                <a href="" class="linkcard">
+                    <h3 class="pcardstitle">Prescrição Eletrônica</h3>
+                    <figure class="iconcard"><img src="img/medicine.png" alt=""></figure>
+                    <p class="pcards">Equipe Responsável</p>
+                    <p class="pcards">Data de Atualização</p>
+                    <p class="pcards">Versão 1.17.008</p>
+                </a>
+            </article>
+            <article>
+                <a href="" class="linkcard">
+                    <h3 class="pcardstitle">Gerenciamento de risco</h3>
+                    <figure class="iconcard"><img src="img/caindo.png" alt=""></figure>
+                    <p class="pcards">Equipe Responsável</p>
+                    <p class="pcards">Data de Atualização</p>
+                    <p class="pcards">Versão 1.17.008</p>
+                </a>
+            </article>
+            <article>
+                <a href="" class="linkcard">
+                    <h3 class="pcardstitle">ATHOS</h3>
+                    <figure class="iconcard"><img src="img/equipe-medica.png" alt=""></figure>
+                    <p class="pcards">Equipe Responsável</p>
+                    <p class="pcards">Data de Atualização</p>
+                    <p class="pcards">Versão 1.17.008</p>
+                </a>
+            </article>
+            <article>
+                <a href="" class="linkcard">
+                    <h3 class="pcardstitle">Passagem de Plantão</h3>
+                    <figure class="iconcard"><img src="img/nurse.png" alt=""></figure>
+                    <p class="pcards">Equipe Responsável</p>
+                    <p class="pcards">Data de Atualização</p>
+                    <p class="pcards">Versão 1.17.008</p>
+                </a>
+            </article>
+            <article>
+                <a href="" class="linkcard">
+                    <h3 class="pcardstitle">Lis</h3>
+                    <figure class="iconcard"><img src="img/grafic.png" alt=""></figure>
+                    <p class="pcards">Equipe Responsável</p>
+                    <p class="pcards">Data de Atualização</p>
+                    <p class="pcards">Versão 1.17.008</p>
+                </a>
+            </article>
+            <article>
+                <a href="" class="linkcard">
+                    <h3 class="pcardstitle">Protocolo de cirugia Segura</h3>
+                    <figure class="iconcard"><img src="img/list.png" alt=""></figure>
+                    <p class="pcards">Equipe Responsável</p>
+                    <p class="pcards">Data de Atualização</p>
+                    <p class="pcards">Versão 1.17.008</p>
+                </a>
+            </article>
+            <article>
+                <a href="" class="linkcard">
+                    <h3 class="pcardstitle">PEP</h3>
+                    <figure class="iconcard"><img src="img/folder.png" alt=""></figure>
+                    <p class="pcards">Equipe Responsável</p>
+                    <p class="pcards">Data de Atualização</p>
+                    <p class="pcards">Versão 1.17.008</p>
+                </a>
+            </article>
+
+        </div>
+    </header>
+
+</body>
+
+</html>
