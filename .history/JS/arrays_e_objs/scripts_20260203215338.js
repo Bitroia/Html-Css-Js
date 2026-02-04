@@ -347,18 +347,18 @@
 
 // console.log(veiculoA, veiculoB, veiculoC);
 
-//JSON
+// //JSON
 
-const myJson =
-  '{"name": "Vitoria", "age": 25, "skills": ["HTML", "CSS", "JavaScript"]}';
+// const myJson =
+//   '{"name": "Vitoria", "age": 25, "skills": ["HTML", "CSS", "JavaScript"]}';
 
 // console.log(myJson);
 
 // console.log(typeof myJson);
 
-//JSON para objetos e objetos para JSON
+// //JSON para objetos e objetos para JSON
 
-const myObject = JSON.parse(myJson);
+// const myObject = JSON.parse(myJson);
 
 // console.log(myObject);
 
@@ -377,8 +377,4 @@ const myObject = JSON.parse(myJson);
 myObject.isOpenToWork = true
 
 console.log(myObject)
-
-const myNewJson = JSON.stringify(myObject)
-
-console.log(typeof myNewJson)
 

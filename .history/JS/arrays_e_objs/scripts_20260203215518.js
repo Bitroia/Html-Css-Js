@@ -352,9 +352,9 @@
 const myJson =
   '{"name": "Vitoria", "age": 25, "skills": ["HTML", "CSS", "JavaScript"]}';
 
-// console.log(myJson);
+console.log(myJson);
 
-// console.log(typeof myJson);
+console.log(typeof myJson);
 
 //JSON para objetos e objetos para JSON
 
@@ -380,5 +380,5 @@ console.log(myObject)
 
 const myNewJson = JSON.stringify(myObject)
 
-console.log(typeof myNewJson)
+console.log(myNewJson)
 

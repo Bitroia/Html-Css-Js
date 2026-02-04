@@ -323,62 +323,35 @@
 
 // //destructuring em objetos
 
-// const userDetails = {
-//   firstName: "Vitoria",
-//   lastName: "Cardozo",
-//   job: "Programadora",
-// };
+const userDetails = {
+  firstName: "Vitoria",
+  lastName: "Cardozo",
+  job: "Programadora",
+};
 
-// const { firstName, lastName, job } = userDetails;
+const { firstName, lastName, job } = userDetails;
 
-// console.log(firstName, lastName, job);
+console.log(firstName, lastName, job);
 
-// //renomear variáveis
+//renomear variáveis
 
-// const { firstName: primeiroNome } = userDetails;
+const { firstName: primeiroNome } = userDetails;
 
-// console.log(primeiroNome);
+console.log(primeiroNome)
 
-// //destructuring em arrays
+//destructuring em arrays
 
-// const myList = ["Avião", "Submarino", "Carro"];
+const myList = ["Avião", "Submarino", "Carro"]
 
-// const [veiculoA, veiculoB, veiculoC] = myList;
+const[veiculoA, veiculoB, veiculoC] = myList
 
-// console.log(veiculoA, veiculoB, veiculoC);
+console.log(veiculoA,veiculoB,veiculoC)
 
 //JSON
 
-const myJson =
-  '{"name": "Vitoria", "age": 25, "skills": ["HTML", "CSS", "JavaScript"]}';
+const myJson = '{"name:" "Vitoria", "age": 25, "skills": ["HTML", "CSS", "JavaScript"]}'
 
-// console.log(myJson);
+console.log(myJson)
 
-// console.log(typeof myJson);
-
-//JSON para objetos e objetos para JSON
-
-const myObject = JSON.parse(myJson);
-
-// console.log(myObject);
-
-// console.log(myObject.name)
-
-// console.log( typeof myObject)
-
-// //JSON invalido
-
-// const badJason = '{"name": Vitoria, "age": 25}' //string sem aspas
-
-// const myBadObject = JSON.parse(badJason)
-
-// console.log(myBadObject)
-
-myObject.isOpenToWork = true
-
-console.log(myObject)
-
-const myNewJson = JSON.stringify(myObject)
-
-console.log(typeof myNewJson)
+console.log(typeof myJson)
 

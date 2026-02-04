@@ -352,19 +352,19 @@
 const myJson =
   '{"name": "Vitoria", "age": 25, "skills": ["HTML", "CSS", "JavaScript"]}';
 
-// console.log(myJson);
+console.log(myJson);
 
-// console.log(typeof myJson);
+console.log(typeof myJson);
 
 //JSON para objetos e objetos para JSON
 
 const myObject = JSON.parse(myJson);
 
-// console.log(myObject);
+console.log(myObject);
 
-// console.log(myObject.name)
+console.log(myObject.name)
 
-// console.log( typeof myObject)
+console.log( typeof myObject)
 
 // //JSON invalido
 
@@ -380,5 +380,5 @@ console.log(myObject)
 
 const myNewJson = JSON.stringify(myObject)
 
-console.log(typeof myNewJson)
+console.log
 

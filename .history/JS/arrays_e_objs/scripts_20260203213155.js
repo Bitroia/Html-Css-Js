@@ -252,133 +252,78 @@
 
 // padstart
 
-// const testePadstart = "1";
+const testePadstart = "1";
 
-// const newNumber = testePadstart.padStart(4, "0");
+const newNumber = testePadstart.padStart(4, "0");
 
-// console.log(testePadstart);
+console.log(testePadstart);
 
-// console.log(newNumber);
+console.log(newNumber);
 
-// const testePadEnd = newNumber.padEnd(10, "0");
+const testePadEnd = newNumber.padEnd(10, "0");
 
-// console.log(testePadEnd);
+console.log(testePadEnd);
 
-// //slip
+//slip
 
-// const frase = "O rato roeu a roupa do rei de roma";
+const frase = "O rato roeu a roupa do rei de roma";
 
-// const arrayDaFrase = frase.split("");
+const arrayDaFrase = frase.split("");
 
-// console.log(arrayDaFrase);
+console.log(arrayDaFrase);
 
-// //join
+//join
 
-// const fraseDeNovo = arrayDaFrase.join("");
+const fraseDeNovo = arrayDaFrase.join("");
 
-// console.log(fraseDeNovo);
+console.log(fraseDeNovo);
 
-// const itensParaComprar = ["Mouse", "Teclado", "Monitor"];
+const itensParaComprar = ["Mouse", "Teclado", "Monitor"];
 
-// const frasedeCompra = `Precisamos comprar: ${itensParaComprar.join(",")}.`;
+const frasedeCompra = `Precisamos comprar: ${itensParaComprar.join(",")}.`;
 
-// console.log(frasedeCompra);
+console.log(frasedeCompra);
 
-// //repeat
+//repeat
 
-// const palavra = "Testando";
+const palavra = "Testando";
 
-// console.log(palavra.repeat(5));
+console.log(palavra.repeat(5));
 
-// //rest operator
+//rest operator
 
-// const somaInfinita = (...args) => {
-//   let total = 0;
-//   for (let i = 0; i < args.length; i++) {
-//     total += args[i];
-//   }
+const somaInfinita = (...args) => {
+  let total = 0;
+  for (let i = 0; i < args.length; i++) {
+    total += args[i];
+  }
 
-//   return total;
-// };
+  return total;
+};
 
-// console.log(somaInfinita(1, 2, 3));
+console.log(somaInfinita(1, 2, 3));
 
-// console.log(somaInfinita(1, 20, 34, 3434, 128812, 12723, 12, 23, 54, 12));
+console.log(somaInfinita(1, 20, 34, 3434, 128812, 12723, 12, 23, 54, 12));
 
-// //for of
+//for of
 
-// const somaInfinita2 = (...args) => {
-//   let total = 0;
+const somaInfinita2 = (...args) => {
+  let total = 0;
 
-//   for (num of args) {
-//     total += num;
-//   }
+  for (num of args) {
+    total += num;
+  }
 
-//   return total;
-// };
+  return total;
+};
 
-// console.log(somaInfinita2(1, 2, 4));
+console.log(somaInfinita2(1, 2, 4));
 
-// console.log(somaInfinita2(2, 3, 54, 2, 1, 5, 2));
+console.log(somaInfinita2(2, 3, 54, 2, 1, 5, 2));
 
-// //destructuring em objetos
+//destructuring em objetos
 
-// const userDetails = {
-//   firstName: "Vitoria",
-//   lastName: "Cardozo",
-//   job: "Programadora",
-// };
-
-// const { firstName, lastName, job } = userDetails;
-
-// console.log(firstName, lastName, job);
-
-// //renomear variáveis
-
-// const { firstName: primeiroNome } = userDetails;
-
-// console.log(primeiroNome);
-
-// //destructuring em arrays
-
-// const myList = ["Avião", "Submarino", "Carro"];
-
-// const [veiculoA, veiculoB, veiculoC] = myList;
-
-// console.log(veiculoA, veiculoB, veiculoC);
-
-//JSON
-
-const myJson =
-  '{"name": "Vitoria", "age": 25, "skills": ["HTML", "CSS", "JavaScript"]}';
-
-// console.log(myJson);
-
-// console.log(typeof myJson);
-
-//JSON para objetos e objetos para JSON
-
-const myObject = JSON.parse(myJson);
-
-// console.log(myObject);
-
-// console.log(myObject.name)
-
-// console.log( typeof myObject)
-
-// //JSON invalido
-
-// const badJason = '{"name": Vitoria, "age": 25}' //string sem aspas
-
-// const myBadObject = JSON.parse(badJason)
-
-// console.log(myBadObject)
-
-myObject.isOpenToWork = true
-
-console.log(myObject)
-
-const myNewJson = JSON.stringify(myObject)
-
-console.log(typeof myNewJson)
-
+const userDetails ={
+  firstName:"Vitoria"
+  
+}

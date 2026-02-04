@@ -380,5 +380,5 @@ console.log(myObject)
 
 const myNewJson = JSON.stringify(myObject)
 
-console.log(typeof myNewJson)
+console.log(myNewJson)
 
