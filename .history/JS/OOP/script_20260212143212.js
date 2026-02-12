@@ -138,137 +138,46 @@
 
 //mais sobre classes
 
-// class Caminhao {
-//   constructor(eixos, cor) {
-//     ((this.eixos = eixos), (this.cor = cor));
-//   }
+class Caminhao {
+  constructor(eixos, cor) {
+    ((this.eixos = eixos), (this.cor = cor));
+  }
 
-//   descreverCaminhao() {
-//     console.log(
-//       `Este caminhão tem ${this.eixos} eixos e é da cor ${this.cor}.`,
-//     );
-//   }
-// }
+  descreverCaminhao() {
+    console.log(
+      `Este caminhão tem ${this.eixos} eixos e é da cor ${this.cor}.`,
+    );
+  }
+}
 
-// const scania = new Caminhao(6, "branco");
+const scania = new Caminhao(6, "branco");
 
-// console.log(scania);
+console.log(scania);
 
-// scania.descreverCaminhao();
+scania.descreverCaminhao();
 
-// Caminhao.motor = 4; //nao funciona
+Caminhao.motor = 4; //nao funciona
 
-// const c2 = new Caminhao(4, "Preta");
+const c2 = new Caminhao(4, "Preta");
 
-// console.log(c2);
+console.log(c2);
 
-// console.log(c2.motor);
+console.log(c2.motor);
 
-// Caminhao.prototype.motor = 4.0;
+Caminhao.prototype.motor = 4.0;
 
-// const c3 = new Caminhao(6,"azul")
+const c3 = new Caminhao(6,"azul")
 
-// console.log(c3.motor)
+console.log(c3.motor)
 
 //override
 
-// class Humano {
-//   constructor (nome, idade){
-//     this.nome = nome;
-//     this.idade = idade;
-//   }
-// }
-
-// const vitoriaa = new Humano ("vitoria",26)
-
-// console.log(vitoriaa)
-
-// Humano.prototype.idade = "Não definida";
-
-// console.log(vitoriaa.idade)
-
-// console.log(Humano.prototype.idade)
-
-//symbol
-
-class Aviao {
-  constructor(marca, turbinas) {
-    this.marca = marca;
-    this.turbinas = turbinas;
-  }
-}
-
-const asas = Symbol();
-const pilotos = Symbol();
-
-Aviao.prototype[asas] = 2;
-Aviao.prototype[pilotos] = 3;
-
-const boeing = new Aviao("Boeing", 10);
-
-console.log(boeing);
-console.log(boeing[asas]);
-console.log(boeing[pilotos]);
-
-//getter e setter
-
-class Post {
-  constructor(titulo, descricao, tags) {
-    this.titulo = titulo;
-    this.descricao = descricao;
-    this.tags = tags;
-  }
-
-  get exibirTitulo() {
-    return `Você está lendo: ${this.titulo}`;
-  }
-
-  set adicionarTags(tags) {
-    const tagsArrays = tags.split(", ");
-    this.tags = tagsArrays;
-  }
-}
-
-const myPost = new Post("Algum post", "É um post sobre programação");
-
-console.log(myPost);
-
-console.log(myPost.exibirTitulo);
-
-myPost.adicionarTags = "programação, javascript, js";
-
-console.log(myPost);
-
-//herança
-
-class Mamifero {
-  constructor(patas) {
-    this.patas = patas;
-  }
-}
-
-class Lobo extends Mamifero {
-  constructor(patas, nome) {
-    super(patas, patas);
+class Humano {
+  constructor (nome, idade){
     this.nome = nome;
+    this.idade = idade;
   }
 }
 
-const shark = new Lobo(4, "Shark");
-
-console.log(shark);
-
-console.log(shark.patas);
-
-//instanceoff
-
-console.log(shark instanceof Lobo);
-
-console.log(Lobo instanceof Mamifero);
-
-console.log(new Lobo(4, "teste") instanceof Mamifero);
-
-console.log(new Post("d", "b") instanceof Lobo);
-
-
-
+const vitoriaa = new Humano ("vitoria",26)
+ 

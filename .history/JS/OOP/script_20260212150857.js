@@ -267,8 +267,3 @@ console.log(shark instanceof Lobo);
 console.log(Lobo instanceof Mamifero);
 
 console.log(new Lobo(4, "teste") instanceof Mamifero);
-
-console.log(new Post("d", "b") instanceof Lobo);
-
-
-
