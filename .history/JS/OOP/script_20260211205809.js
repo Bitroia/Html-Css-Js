@@ -167,5 +167,3 @@ console.log(c2.motor);
 Caminhao.prototype.motor = 4.0;
 
 const c3 = new Caminhao(6,"azul")
-
-console.log(c3.motor)

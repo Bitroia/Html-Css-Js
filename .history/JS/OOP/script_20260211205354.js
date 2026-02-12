@@ -144,9 +144,7 @@ class Caminhao {
   }
 
   descreverCaminhao() {
-    console.log(
-      `Este caminhão tem ${this.eixos} eixos e é da cor ${this.cor}.`,
-    );
+    console.log(`Este caminhão tem ${this.eixos} eixos e é da cor ${this.cor}.`);
   }
 }
 
@@ -156,16 +154,5 @@ console.log(scania);
 
 scania.descreverCaminhao();
 
-Caminhao.motor = 4; //nao funciona
+Caminhao.moto = 4;
 
-const c2 = new Caminhao(4, "Preta");
-
-console.log(c2);
-
-console.log(c2.motor);
-
-Caminhao.prototype.motor = 4.0;
-
-const c3 = new Caminhao(6,"azul")
-
-console.log(c3.motor)

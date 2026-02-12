@@ -140,13 +140,11 @@
 
 class Caminhao {
   constructor(eixos, cor) {
-    ((this.eixos = eixos), (this.cor = cor));
+    ((this.eixos = eixos), this.cor = cor);
   }
 
   descreverCaminhao() {
-    console.log(
-      `Este caminhão tem ${this.eixos} eixos e é da cor ${this.cor}.`,
-    );
+    console.log(`Este caminhão tem ${eixos} eixos e é da cor ${cor}.`);
   }
 }
 
@@ -155,17 +153,3 @@ const scania = new Caminhao(6, "branco");
 console.log(scania);
 
 scania.descreverCaminhao();
-
-Caminhao.motor = 4; //nao funciona
-
-const c2 = new Caminhao(4, "Preta");
-
-console.log(c2);
-
-console.log(c2.motor);
-
-Caminhao.prototype.motor = 4.0;
-
-const c3 = new Caminhao(6,"azul")
-
-console.log(c3.motor)
