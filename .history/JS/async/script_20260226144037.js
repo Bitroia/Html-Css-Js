@@ -1,4 +1,4 @@
-// ! setTimeout
+// //setTimeout
 
 // console.log("Ainda não executou");
 
@@ -8,7 +8,7 @@
 
 // console.log("Ainda não executou 2");
 
-// ! setInterval
+// //setInterval
 
 // console.log("Ainda não executou");
 
@@ -18,13 +18,13 @@
 
 // console.log("Ainda não executou");
 
-// !Promisses
+//Promisses
 
 // const promessa = Promise.resolve(5 + 5);
 
 // console.log("Algum código");
 
-// ! promessa
+// promessa
 //   .then((value) => {
 //     console.log(`A soma é ${value}`);
 //     return value;
@@ -34,7 +34,7 @@
 
 // console.log("Outro código");
 
-// ! falha na promisse
+//falha na promisse
 
 // Promise.resolve(4 * "asd")
 //   .then((n) => {
@@ -45,7 +45,7 @@
 
 //   .catch((err) => console.log(`Um erro ocorreu: ${err}`));
 
-// ! rejeição
+//rejeição
 
 function checkNumber(n) {
   return new Promise((resolve, reject) => {
@@ -67,7 +67,7 @@ a.then((v) => console.log(`O resultado é ${v}`)).catch((err) =>
 
 console.log(a, b);
 
-// ! resolvendo varias promisses
+//resolvendo varias promisses
 
 const p1 = new Promise((resolve, reject) => {
   setTimeout(function () {
@@ -87,48 +87,10 @@ const p3 = new Promise((resolve, reject) => {
 
 Promise.all([p1, p2, p3]).then((values) => console.log(values));
 
-// ! async functions
+//async functions
 
 async function somarComDelay(a, b) {
   return a + b;
 }
 
-somarComDelay(2, 4).then((value) => {
-  console.log(`O valor da soma é: ${value}`);
-});
-
-console.log("teste async");
-
-// ! async await
-
-function resolveComDelay() {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve("Resolve a promise");
-    }, 2000);
-  });
-}
-
-async function chamadaAsync() {
-  console.log("Chamando a Promise e esperando o resultado");
-  const result = await resolveComDelay();
-  console.log(`O resultado chegou: ${result}`);
-}
-
-chamadaAsync();
-
-//!  generators
-
-function* generator() {
-  yield 1;
-  yield 2;
-  yield 3;
-}
-
-const gen = generator();
-
-console.log(gen.next().value);
-console.log(gen.next().value);
-console.log(gen.next().value)
-
-
+soma

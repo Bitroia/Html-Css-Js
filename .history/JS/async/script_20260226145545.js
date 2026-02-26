@@ -1,4 +1,4 @@
-// ! setTimeout
+// //setTimeout
 
 // console.log("Ainda não executou");
 
@@ -8,7 +8,7 @@
 
 // console.log("Ainda não executou 2");
 
-// ! setInterval
+// //setInterval
 
 // console.log("Ainda não executou");
 
@@ -18,13 +18,13 @@
 
 // console.log("Ainda não executou");
 
-// !Promisses
+//Promisses
 
 // const promessa = Promise.resolve(5 + 5);
 
 // console.log("Algum código");
 
-// ! promessa
+// promessa
 //   .then((value) => {
 //     console.log(`A soma é ${value}`);
 //     return value;
@@ -116,19 +116,3 @@ async function chamadaAsync() {
 }
 
 chamadaAsync();
-
-//!  generators
-
-function* generator() {
-  yield 1;
-  yield 2;
-  yield 3;
-}
-
-const gen = generator();
-
-console.log(gen.next().value);
-console.log(gen.next().value);
-console.log(gen.next().value)
-
-

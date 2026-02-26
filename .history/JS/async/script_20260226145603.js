@@ -1,4 +1,4 @@
-// ! setTimeout
+// //setTimeout
 
 // console.log("Ainda não executou");
 
@@ -8,9 +8,9 @@
 
 // console.log("Ainda não executou 2");
 
-// ! setInterval
+// //setInterval
 
-// console.log("Ainda não executou");
+// !  console.log("Ainda não executou");
 
 // // setInterval(function () {
 // //   console.log("Intervalo assíncrono");
@@ -116,19 +116,3 @@ async function chamadaAsync() {
 }
 
 chamadaAsync();
-
-//!  generators
-
-function* generator() {
-  yield 1;
-  yield 2;
-  yield 3;
-}
-
-const gen = generator();
-
-console.log(gen.next().value);
-console.log(gen.next().value);
-console.log(gen.next().value)
-
-
