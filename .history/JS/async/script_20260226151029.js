@@ -129,8 +129,7 @@ const gen = generator();
 
 console.log(gen.next().value);
 console.log(gen.next().value);
-console.log(gen.next().value);
+console.log(gen.next().value)
 
 // teste
 
-console.log("teste");
