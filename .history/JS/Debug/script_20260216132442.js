@@ -103,8 +103,6 @@ function checkArray(arr) {
   if (arr.length === 0) {
     throw new Error("Ö array precisa ter elementos");
   } else {
-    console.log(`O array tem ${arr.length} elementos`);
+    console.log(`O arr`)
   }
 }
-
-checkArray([1,2,3]);

@@ -75,6 +75,7 @@ const opa = "teste";
 
 // }
 
+
 //try catch
 
 // try{
@@ -86,25 +87,19 @@ const opa = "teste";
 //finally
 
 try {
-  const value = checkNumber("asd");
+  const value = checkNumber("asd")
 
-  if (!value) {
-    throw new Error("Valores inválidos");
+  if(!value) {
+    throw new Error("Valores inválidos")
   }
 } catch (error) {
   console.log(`Opa, aconteceu um problema: ${error}`);
 } finally {
-  console.log("O código foi executado!");
+  console.log("O código foi executado!")
 }
 
 //assertion
 
-function checkArray(arr) {
-  if (arr.length === 0) {
-    throw new Error("Ö array precisa ter elementos");
-  } else {
-    console.log(`O array tem ${arr.length} elementos`);
-  }
+function checkArray(arr){
+  if (arr.length)
 }
-
-checkArray([1,2,3]);
