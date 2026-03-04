@@ -1,3 +1,0 @@
-shift + alt + F = identar
-ctrl + k + c = comentario
-/**/
