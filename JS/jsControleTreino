@@ -1,0 +1,59 @@
+btnInput = document.querySelector("#btnInput")
+inputExercise = document.querySelector("#input-exercise")
+doneBtn = document.querySelector(".doneBtn")
+deleteBtn = document.querySelector(".delete-btn")
+list = document.querySelector(".list")
+
+//Eventos
+btnInput.addEventListener("click", function () {
+    alert("Procurando...")
+})
+doneBtn.addEventListener("click", function () {
+
+})
+
+list.addEventListener("click", function (event) {
+
+    // Se clicou no botão Finalizado
+    if (event.target.classList.contains("doneBtn")) {
+
+        const li = event.target.parentElement;
+        li.classList.toggle("completed");
+
+        updateCounter();
+    }
+
+    // Lançando aviso antes de apagar
+
+    deleteBtn.forEach(function (button) {
+
+        button.addEventListener("click", function () {
+
+            const confirmDelete = confirm("Tem certeza que deseja eliminar este exercício?")
+
+            if (confirmDelete) {
+
+                const exercise = button.parentElement
+                exercise.remove()
+
+            }
+
+        })
+
+    })
+
+});
+
+//Funções
+
+function updateCounter() {
+
+    const allExercises = document.querySelectorAll(".exercise");
+    const completedExercises = document.querySelectorAll(".completed");
+
+    doneCount.textContent =
+        "Exercícios concluídos: " +
+        completedExercises.length +
+        " de " +
+        allExercises.length;
+}
