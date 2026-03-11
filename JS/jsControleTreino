@@ -25,22 +25,20 @@ list.addEventListener("click", function (event) {
 
     // Lançando aviso antes de apagar
 
-    deleteBtn.forEach(function (button) {
+    if (event.target.classList.contains("delete-btn")) {
 
-        button.addEventListener("click", function () {
+        const confirmDelete = confirm("Tem certeza que deseja eliminar este exercício?")
 
-            const confirmDelete = confirm("Tem certeza que deseja eliminar este exercício?")
+        if (confirmDelete) {
 
-            if (confirmDelete) {
+            const li = event.target.parentElement
+            li.remove()
+            updateCounter()
 
-                const exercise = button.parentElement
-                exercise.remove()
+            showAlert("Exercício eliminado!")
 
-            }
-
-        })
-
-    })
+        }
+    }
 
 });
 
@@ -56,4 +54,15 @@ function updateCounter() {
         completedExercises.length +
         " de " +
         allExercises.length;
+}
+
+const alertBox = document.querySelector("#alertBox")
+
+function showAlert(message){
+    alertBox.textContent = message
+    alertBox.classList.add("show")
+
+    setTimeout(function(){
+        alertBox.classList.remove("show")
+    }, 3000)
 }
