@@ -57,15 +57,26 @@ li {
     margin-bottom: 10px;
     border-radius: 4px;
     gap: 8px;
+    transition: all 0.3s ease;
 }
 
 .exercise span{
     flex: 1;
 }
 
+.completed{
+    opacity: 0.4;
+    transform: scale(0.98);
+}
+
 .completed span {
     text-decoration: line-through;
     opacity: 0.6;
+}
+
+.removing{
+    opacity: 0;
+    transform: translateX(40px);
 }
 
 .doneBtn {
