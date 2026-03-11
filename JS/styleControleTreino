@@ -79,9 +79,6 @@ li {
 }
 
 
-
-
-
 .undo-btn {
     background-color: #777;
 }
@@ -98,4 +95,22 @@ li {
 
 button:hover{
     opacity: 0.9;
+}
+
+.alertBox{
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #333;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 6px;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 0.3s ease;
+}
+
+.alertBox.show{
+    opacity: 1;
+    transform: translateY(0);
 }
