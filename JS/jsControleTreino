@@ -5,12 +5,33 @@ deleteBtn = document.querySelector(".delete-btn")
 list = document.querySelector(".list")
 
 //Eventos
-btnInput.addEventListener("click", function () {
-    alert("Procurando...")
-})
-doneBtn.addEventListener("click", function () {
+btnInput.addEventListener("click", function (event) {
+    event.preventDefault()
 
+    const exerciseText = inputExercise.value
+    const li = document.createElement("li")
+    li.classList.add("exercise")
+    const span = document.createElement("span")
+    span.textContent = exerciseText
+
+    const doneButton = document.createElement("button")
+    doneButton.textContent = "Finalizado"
+    doneButton.classList.add("doneBtn")
+
+    const deleteButton = document.createElement("button")
+    deleteButton.textContent = "Eliminar"
+    deleteButton.classList.add("delete-btn")
+
+    li.appendChild(span)
+    li.appendChild(doneButton)
+    li.appendChild(deleteButton)
+
+    list.appendChild(li)
+
+    inputExercise.value = ""
 })
+
+
 
 list.addEventListener("click", function (event) {
 
@@ -32,10 +53,14 @@ list.addEventListener("click", function (event) {
         if (confirmDelete) {
 
             const li = event.target.parentElement
-            li.remove()
-            updateCounter()
+            li.classList.add("removing")
 
-            showAlert("Exercício eliminado!")
+            setTimeout(function () {
+                li.remove()
+                updateCounter()
+                showAlert("Exercício eliminado!")
+            }, 300)
+
 
         }
     }
@@ -58,11 +83,12 @@ function updateCounter() {
 
 const alertBox = document.querySelector("#alertBox")
 
-function showAlert(message){
+function showAlert(message) {
     alertBox.textContent = message
     alertBox.classList.add("show")
 
-    setTimeout(function(){
+    setTimeout(function () {
         alertBox.classList.remove("show")
     }, 3000)
 }
+
