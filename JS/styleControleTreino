@@ -1,0 +1,127 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box
+}
+
+body{
+    background-color: #f4f4f4;
+}
+
+.container {
+    width: 400px;
+    margin: 40px auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.add-exercise{
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.add-exercise input{
+    flex: 1;
+    padding: 8px;
+}
+
+.add-exercise button{
+    color: white;
+    cursor: pointer;
+    background-color: #3e3e3e;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+}
+
+li {
+    list-style: none;
+}
+
+
+.exercise{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fafafa;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.exercise span{
+    flex: 1;
+}
+
+.completed{
+    opacity: 0.4;
+    transform: scale(0.98);
+}
+
+.completed span {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+.removing{
+    opacity: 0;
+    transform: translateX(40px);
+}
+
+.doneBtn {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-left: 5px;
+    border-radius: 4px;
+}
+
+
+.undo-btn {
+    background-color: #777;
+}
+
+.delete-btn{
+    background-color: rgb(141, 7, 7);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-left: 5px;
+    border-radius: 4px;
+}
+
+button:hover{
+    opacity: 0.9;
+}
+
+.alertBox{
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #333;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 6px;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 0.3s ease;
+}
+
+.alertBox.show{
+    opacity: 1;
+    transform: translateY(0);
+}

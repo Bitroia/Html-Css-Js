@@ -1,0 +1,94 @@
+btnInput = document.querySelector("#btnInput")
+inputExercise = document.querySelector("#input-exercise")
+doneBtn = document.querySelector(".doneBtn")
+deleteBtn = document.querySelector(".delete-btn")
+list = document.querySelector(".list")
+
+//Eventos
+btnInput.addEventListener("click", function (event) {
+    event.preventDefault()
+
+    const exerciseText = inputExercise.value
+    const li = document.createElement("li")
+    li.classList.add("exercise")
+    const span = document.createElement("span")
+    span.textContent = exerciseText
+
+    const doneButton = document.createElement("button")
+    doneButton.textContent = "Finalizado"
+    doneButton.classList.add("doneBtn")
+
+    const deleteButton = document.createElement("button")
+    deleteButton.textContent = "Eliminar"
+    deleteButton.classList.add("delete-btn")
+
+    li.appendChild(span)
+    li.appendChild(doneButton)
+    li.appendChild(deleteButton)
+
+    list.appendChild(li)
+
+    inputExercise.value = ""
+})
+
+
+
+list.addEventListener("click", function (event) {
+
+    // Se clicou no botão Finalizado
+    if (event.target.classList.contains("doneBtn")) {
+
+        const li = event.target.parentElement;
+        li.classList.toggle("completed");
+
+        updateCounter();
+    }
+
+    // Lançando aviso antes de apagar
+
+    if (event.target.classList.contains("delete-btn")) {
+
+        const confirmDelete = confirm("Tem certeza que deseja eliminar este exercício?")
+
+        if (confirmDelete) {
+
+            const li = event.target.parentElement
+            li.classList.add("removing")
+
+            setTimeout(function () {
+                li.remove()
+                updateCounter()
+                showAlert("Exercício eliminado!")
+            }, 300)
+
+
+        }
+    }
+
+});
+
+//Funções
+
+function updateCounter() {
+
+    const allExercises = document.querySelectorAll(".exercise");
+    const completedExercises = document.querySelectorAll(".completed");
+
+    doneCount.textContent =
+        "Exercícios concluídos: " +
+        completedExercises.length +
+        " de " +
+        allExercises.length;
+}
+
+const alertBox = document.querySelector("#alertBox")
+
+function showAlert(message) {
+    alertBox.textContent = message
+    alertBox.classList.add("show")
+
+    setTimeout(function () {
+        alertBox.classList.remove("show")
+    }, 3000)
+}
+
