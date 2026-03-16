@@ -1,94 +1,109 @@
-btnInput = document.querySelector("#btnInput")
-inputExercise = document.querySelector("#input-exercise")
-doneBtn = document.querySelector(".doneBtn")
-deleteBtn = document.querySelector(".delete-btn")
-list = document.querySelector(".list")
+btnInput = document.querySelector("#btnInput");
+inputExercise = document.querySelector("#input-exercise");
+doneBtn = document.querySelector(".doneBtn");
+deleteBtn = document.querySelector(".delete-btn");
+list = document.querySelector(".list");
+container = document.querySelector(".container");
+btnTermino = document.querySelector(".btn-termino")
 
 //Eventos
 btnInput.addEventListener("click", function (event) {
-    event.preventDefault()
+  event.preventDefault();
 
-    const exerciseText = inputExercise.value
-    const li = document.createElement("li")
-    li.classList.add("exercise")
-    const span = document.createElement("span")
-    span.textContent = exerciseText
+  const exerciseText = inputExercise.value;
+  const li = document.createElement("li");
+  li.classList.add("exercise");
+  const texto = inputExercise.value.trim();
+  const span = document.createElement("span");
+  span.textContent = texto;
 
-    const doneButton = document.createElement("button")
-    doneButton.textContent = "Finalizado"
-    doneButton.classList.add("doneBtn")
+  const doneButton = document.createElement("button");
+  doneButton.textContent = "Finalizado";
+  doneButton.classList.add("doneBtn");
 
-    const deleteButton = document.createElement("button")
-    deleteButton.textContent = "Eliminar"
-    deleteButton.classList.add("delete-btn")
+  const deleteButton = document.createElement("button");
+  deleteButton.textContent = "Eliminar";
+  deleteButton.classList.add("delete-btn");
 
-    li.appendChild(span)
-    li.appendChild(doneButton)
-    li.appendChild(deleteButton)
+  li.appendChild(span);
+  li.appendChild(doneButton);
+  li.appendChild(deleteButton);
 
-    list.appendChild(li)
+  //retirando possíveis espaços que o usuário colocar
 
-    inputExercise.value = ""
-})
+  //verificando se o input ta vazio
 
+  if (texto === "") {
+    alert("O campo não pode ficar vazio!");
+    inputExercise.focus();
+    return;
+  }
 
+  list.appendChild(li); //adiciona o exercicio se o input tiver conteúdo
+
+  inputExercise.value = ""; //limpa o input depois de add
+});
 
 list.addEventListener("click", function (event) {
+  // Se clicou no botão Finalizado
+  if (event.target.classList.contains("doneBtn")) {
+    const li = event.target.parentElement;
+    li.classList.toggle("completed");
 
-    // Se clicou no botão Finalizado
-    if (event.target.classList.contains("doneBtn")) {
+    updateCounter();
+  }
 
-        const li = event.target.parentElement;
-        li.classList.toggle("completed");
+  // Lançando aviso antes de apagar
 
+  if (event.target.classList.contains("delete-btn")) {
+    const confirmDelete = confirm(
+      "Tem certeza que deseja eliminar este exercício?",
+    );
+
+    if (confirmDelete) {
+      const li = event.target.parentElement;
+      li.classList.add("removing");
+
+      setTimeout(function () {
+        li.remove();
         updateCounter();
+        showAlert("Exercício eliminado!");
+      }, 300);
     }
-
-    // Lançando aviso antes de apagar
-
-    if (event.target.classList.contains("delete-btn")) {
-
-        const confirmDelete = confirm("Tem certeza que deseja eliminar este exercício?")
-
-        if (confirmDelete) {
-
-            const li = event.target.parentElement
-            li.classList.add("removing")
-
-            setTimeout(function () {
-                li.remove()
-                updateCounter()
-                showAlert("Exercício eliminado!")
-            }, 300)
-
-
-        }
-    }
-
+  }
 });
 
 //Funções
 
 function updateCounter() {
+  const allExercises = document.querySelectorAll(".exercise");
+  const completedExercises = document.querySelectorAll(".completed");
 
-    const allExercises = document.querySelectorAll(".exercise");
-    const completedExercises = document.querySelectorAll(".completed");
+  doneCount.textContent =
+    "Exercícios concluídos: " +
+    completedExercises.length +
+    " de " +
+    allExercises.length;
 
-    doneCount.textContent =
-        "Exercícios concluídos: " +
-        completedExercises.length +
-        " de " +
-        allExercises.length;
+  //Habilitando botão de término de treino
+
+  if (
+    completedExercises.length === allExercises.length &&
+    allExercises.length > 0
+  ) {
+    //terminar logica de esconder o botao
+  } else {
+    btnTermino.classList.toggle(".hidden")
+  }
 }
 
-const alertBox = document.querySelector("#alertBox")
+const alertBox = document.querySelector("#alertBox");
 
 function showAlert(message) {
-    alertBox.textContent = message
-    alertBox.classList.add("show")
+  alertBox.textContent = message;
+  alertBox.classList.add("show");
 
-    setTimeout(function () {
-        alertBox.classList.remove("show")
-    }, 3000)
+  setTimeout(function () {
+    alertBox.classList.remove("show");
+  }, 3000);
 }
-

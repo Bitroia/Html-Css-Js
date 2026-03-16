@@ -1,57 +1,57 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
     <title>Controle de Treinos</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="container">
+      <h1>Controle de Treinos</h1>
 
-        <h1>Controle de Treinos</h1>
+      <form class="add-exercise">
+        <input
+          type="text"
+          placeholder="Nome do exercício"
+          id="input-exercise"
+        />
+        <button id="btnInput">Adicionar Exercício</button>
+      </form>
 
-        <form class="add-exercise">
-            <input type="text" placeholder="Nome do exercício" id="input-exercise">
-            <button id="btnInput">Adicionar Exercício</button>
-        </form>
+      <ul class="list">
+        <li class="exercise">
+          <span>Flexão de braço</span>
+          <button class="doneBtn">Finalizado</button>
+          <button class="delete-btn">Eliminar</button>
+        </li>
 
-        <ul class="list">
+        <li class="exercise">
+          <span>Agachamento</span>
+          <button class="doneBtn">Finalizado</button>
+          <button class="delete-btn">Eliminar</button>
+        </li>
+        <li class="exercise">
+          <span>Flexão de braço</span>
+          <button class="doneBtn">Finalizado</button>
+          <button class="delete-btn">Eliminar</button>
+        </li>
 
-            <li class="exercise">
-                <span>Flexão de braço</span>
-                <button class="doneBtn">Finalizado</button>
-                <button class="delete-btn">Eliminar</button>
-            </li>
-
-            <li class="exercise">
-                <span>Agachamento</span>
-                <button class="doneBtn">Finalizado</button>
-                <button class="delete-btn">Eliminar</button>
-            </li>
-            <li class="exercise">
-                <span>Flexão de braço</span>
-                <button class="doneBtn">Finalizado</button>
-                <button class="delete-btn">Eliminar</button>
-            </li>
-
-            <li class="exercise">
-                <span>Agachamento</span>
-                <button class="doneBtn">Finalizado</button>
-                <button class="delete-btn">Eliminar</button>
-            </li>
-
-        </ul>
-
+        <li class="exercise">
+          <span>Búlgaro</span>
+          <button class="doneBtn">Finalizado</button>
+          <button class="delete-btn">Eliminar</button>
+        </li>
+      </ul>
     </div>
+
+    <button class="btn-termino">Terminar Treino</button>
 
     <div class="done" id="doneCount">
-        Exercícios concluídos: 0 (falta estilizar)
+      Exercícios concluídos: 0 (falta estilizar)
     </div>
     <div id="alertBox" class="alertBox"></div>
-</body>
-
+  </body>
 </html>
