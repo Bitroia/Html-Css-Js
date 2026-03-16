@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Lato";
+}
+
+body{
+    background-color: #090e22;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #fff;
+}
+
+.hide{
+    display: none;
+}
+
+.container{
+    min-width: 4000px;
+    min-height: 400px;
+    padding: 2rem;
+    background-color: #1d1;
+}
