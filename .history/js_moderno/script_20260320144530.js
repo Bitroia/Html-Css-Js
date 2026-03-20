@@ -186,12 +186,6 @@ class ProductWithAttributes extends Product {
       console.log(color);
     });
   }
+
+  
 }
-
-const hat = new ProductWithAttributes("Chapéu", 29.99, ["Preto", "Amarelo", "Verde"])
-
-console.log(hat)
-
-console.log(hat.name)
-
-hat.showColors()

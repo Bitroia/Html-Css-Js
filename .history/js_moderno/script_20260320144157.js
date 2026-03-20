@@ -166,32 +166,13 @@ class Product {
   }
 }
 
-const shirt = new Product("Camisa gola V", 20);
+const shirt = new Product("Camisa gola V", 20)
 
-console.log(shirt);
-console.log(shirt.productWithDiscount(10));
-console.log(shirt.productWithDiscount(15));
+console.log(shirt)
+console.log(shirt.productWithDiscount(10))
+console.log(shirt.productWithDiscount(15))
 
 //! herança
 
-class ProductWithAttributes extends Product {
-  constructor(name, price, colors) {
-    super(name, price);
-    this.colors = colors;
-  }
+class ProductWithAttributes extends Product
 
-  showColors() {
-    console.log("As cores são: ");
-    this.colors.forEach((color) => {
-      console.log(color);
-    });
-  }
-}
-
-const hat = new ProductWithAttributes("Chapéu", 29.99, ["Preto", "Amarelo", "Verde"])
-
-console.log(hat)
-
-console.log(hat.name)
-
-hat.showColors()
