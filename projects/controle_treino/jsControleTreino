@@ -1,35 +1,44 @@
-btnInput = document.querySelector("#btnInput");
-inputExercise = document.querySelector("#input-exercise");
-doneBtn = document.querySelector(".doneBtn");
-deleteBtn = document.querySelector(".delete-btn");
-list = document.querySelector(".list");
-container = document.querySelector(".container");
-btnTermino = document.querySelector(".btn-termino")
+//Selecionando elementos
 
-//Eventos
+const inputExercise = document.querySelector("#input-exercise");
+const btnInput = document.querySelector("#btnInput");
+const doneBtn = document.querySelector(".doneBtn");
+const deleteBtn = document.querySelector(".delete-btn");
+const list = document.querySelector(".list");
+const container = document.querySelector(".container");
+const btnTermino = document.querySelector("#btn-termino");
+const alertBox = document.querySelector("#alertBox");
+const doneCount = document.querySelector("#doneCount");
+
+//Adicionando treino
 btnInput.addEventListener("click", function (event) {
   event.preventDefault();
 
   const exerciseText = inputExercise.value;
   const li = document.createElement("li");
   li.classList.add("exercise");
+
+  //retirando possíveis espaços que o usuário colocar
   const texto = inputExercise.value.trim();
   const span = document.createElement("span");
   span.textContent = texto;
 
-  const doneButton = document.createElement("button");
-  doneButton.textContent = "Finalizado";
-  doneButton.classList.add("doneBtn");
+  const doneBtn = document.createElement("button");
+  doneBtn.classList.add("done-btn");
+  doneBtn.innerHTML = '<i class="fa-solid fa-check"></i>';
 
-  const deleteButton = document.createElement("button");
-  deleteButton.textContent = "Eliminar";
-  deleteButton.classList.add("delete-btn");
+  const deleteBtn = document.createElement("button");
+  deleteBtn.classList.add("delete-btn");
+  deleteBtn.innerHTML = '<i class="fa-solid fa-remove"></i>';
+
+  const editButton = document.createElement("button");
+  editButton.classList.add("edit-btn");
+  editButton.innerHTML = '<i class="fa-solid fa-edit"></i>'
 
   li.appendChild(span);
-  li.appendChild(doneButton);
-  li.appendChild(deleteButton);
-
-  //retirando possíveis espaços que o usuário colocar
+  li.appendChild(doneBtn);
+  li.appendChild(deleteBtn);
+  li.appendChild(editButton);
 
   //verificando se o input ta vazio
 
@@ -42,6 +51,7 @@ btnInput.addEventListener("click", function (event) {
   list.appendChild(li); //adiciona o exercicio se o input tiver conteúdo
 
   inputExercise.value = ""; //limpa o input depois de add
+  updateCounter();
 });
 
 list.addEventListener("click", function (event) {
@@ -75,29 +85,44 @@ list.addEventListener("click", function (event) {
 
 //Funções
 
-function updateCounter() {
+function getWorkoutStatus() {
   const allExercises = document.querySelectorAll(".exercise");
   const completedExercises = document.querySelectorAll(".completed");
-
-  doneCount.textContent =
-    "Exercícios concluídos: " +
-    completedExercises.length +
-    " de " +
-    allExercises.length;
-
-  //Habilitando botão de término de treino
-
-  if (
-    completedExercises.length === allExercises.length &&
-    allExercises.length > 0
-  ) {
-    //terminar logica de esconder o botao
-  } else {
-    btnTermino.classList.toggle(".hidden")
-  }
+  return {
+    total: allExercises.length,
+    completed: completedExercises.length,
+  };
 }
 
-const alertBox = document.querySelector("#alertBox");
+function isCompleteWorkout() {
+  const allExercises = document.querySelectorAll(".exercise");
+  const completedExercises = document.querySelectorAll(".completed");
+  return (
+    completedExercises.length === allExercises.length && allExercises.length > 0
+  );
+}
+
+function updateCounter() {
+  const status = getWorkoutStatus();
+  doneCount.textContent =
+    "Exercícios concluídos: " + status.completed + " de " + status.total;
+}
+
+//Habilitando mensagem de confirmação em botão de término
+
+btnTermino.addEventListener("click", () => {
+  if (isCompleteWorkout()) {
+    const confirmTermination = confirm("Parabens!");
+  } else {
+    const confirmTermination = confirm(
+      "Você não completou o treino, deseja encerrar?",
+    );
+
+    if (confirmTermination) {
+      showAlert("Treino encerrado incompleto!");
+    }
+  }
+});
 
 function showAlert(message) {
   alertBox.textContent = message;
