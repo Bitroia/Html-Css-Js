@@ -4,6 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <script src="script.js" defer></script>
     <title>Controle de Treinos</title>
   </head>
@@ -24,34 +31,42 @@
       <ul class="list">
         <li class="exercise">
           <span>Flexão de braço</span>
-          <button class="doneBtn">Finalizado</button>
-          <button class="delete-btn">Eliminar</button>
+          <button class="done-btn"><i class="fa-solid fa-check"></i></button>
+          <button class="delete-btn"><i class="fa-solid fa-remove"></i></button>
+          <button class="edit-btn"><i class="fa-solid fa-edit"></i></button>
         </li>
 
         <li class="exercise">
           <span>Agachamento</span>
-          <button class="doneBtn">Finalizado</button>
-          <button class="delete-btn">Eliminar</button>
+          <button class="done-btn"><i class="fa-solid fa-check"></i></button>
+          <button class="delete-btn"><i class="fa-solid fa-remove"></i></button>
+          <button class="edit-btn"><i class="fa-solid fa-edit"></i></button>
         </li>
         <li class="exercise">
-          <span>Flexão de braço</span>
-          <button class="doneBtn">Finalizado</button>
-          <button class="delete-btn">Eliminar</button>
+          <span>Supino</span>
+          <button class="done-btn"><i class="fa-solid fa-check"></i></button>
+          <button class="delete-btn"><i class="fa-solid fa-remove"></i></button>
+          <button class="edit-btn"><i class="fa-solid fa-edit"></i></button>
         </li>
 
         <li class="exercise">
           <span>Búlgaro</span>
-          <button class="doneBtn">Finalizado</button>
-          <button class="delete-btn">Eliminar</button>
+          <button class="done-btn"><i class="fa-solid fa-check"></i></button>
+          <button class="delete-btn"><i class="fa-solid fa-remove"></i></button>
+          <button class="edit-btn"><i class="fa-solid fa-edit"></i></button>
         </li>
       </ul>
     </div>
 
-    <button class="btn-termino">Terminar Treino</button>
+    <div id="finish-container">
+      <button id="btn-termino">
+        <i class="fa-solid fa-check"></i>
+      </button>
 
-    <div class="done" id="doneCount">
-      Exercícios concluídos: 0 (falta estilizar)
+      <div class="done-text" id="doneCount">
+        Exercícios concluídos: 0 
+      </div>
+      <div id="alertBox" class="alertBox"></div>
     </div>
-    <div id="alertBox" class="alertBox"></div>
   </body>
 </html>
