@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Gerador de Senha</title>
+  </head>
+  <body>
+    <main>
+      <div id="register-container">
+        <div id="register-banner">
+          <div id="banner-layer">
+            <h1>Seja bem-vindo</h1>
+          </div>
+        </div>
+        <div id="register-form">
+          <h2>Crie sua conta:</h2>
+          <p>Registre-se para utilizar todas as funcionalidades do sistema</p>
+          <form id="form-register">
+            <label for="name" class="lbl-input">Nome</label>
+            <input
+              type="text"
+              class="input-data"
+              id="name"
+              name="name"
+              placeholder="Digite seu nome"
+              required
+            />
+            <label for="email" class="lbl-input">E-mail</label>
+            <input
+              type="email"
+              class="input-data"
+              id="email"
+              name="email"
+              placeholder="Digite seu e-mail"
+              required
+            />
+            <label for="pass" class="lbl-input">Senha</label>
+            <input
+              type="password"
+              class="input-data"
+              id="pass"
+              name="password"
+              placeholder="Digite sua senha"
+              required
+            />
+            <p>Quer ajuda para criar uma senha segura?</p>
+            <button type="button" id="generate-pass">Clique aqui</button>
+            <div id="password-generator">
+                <p id="pass-suggestion">Aqui está a sua senha</p>
+            </div>
+            <label for="pass-confirm" class="lbl-input"
+              >Confirmação de senha</label
+            >
+            <input
+              type="password"
+              class="input-data"
+              id="pass-confirm"
+              name="pass-confirm"
+              placeholder="Confirme a sua senha"
+              required
+            />
+            <button type="submit" class="btn-submit">Cadastrar</button>
+          </form>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
