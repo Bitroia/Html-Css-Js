@@ -173,7 +173,6 @@ header {
   transform: translate(-50%, -50%);
   z-index: 9999;
   color: #fff;
-  text-align: center;
 }
 /* Responsividade */
 
@@ -198,7 +197,7 @@ header {
   }
 
   #notes-container{
-    grid-template-columns: repeat(auto-fill, 100%);
+    
   }
 
   

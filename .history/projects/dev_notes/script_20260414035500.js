@@ -4,7 +4,8 @@ const notesContainer = document.querySelector("#notes-container");
 const noteInput = document.querySelector("#note-content");
 const addNoteBtn = document.querySelector(".add-note");
 const searchInput = document.querySelector("#search-input");
-const exportBtn = document.querySelector("#export-notes");
+const exportBtn = document.querySelector("#export-notes")
+
 
 //! Funções
 
@@ -194,30 +195,6 @@ function searchNotes(search) {
   showNotes();
 }
 
-function exportData() {
-  const notes = getNotes();
-
-  const csvString = [
-    ["ID", "Conteúdo", "Fixado?"],
-
-    ...notes.map((note) => [
-      note.id,
-      `"${note.content.replace(/"/g, '""')}"`, // trata texto
-      note.fixed ? "Sim" : "Não", // mais legível
-    ]),
-  ]
-    .map((e) => e.join(";"))
-    .join("\n");
-
-  const acent = "\uFEFF"; // resolve acentuação
-
-  const element = document.createElement("a");
-  element.href = "data:text/csv;charset=utf-8," + encodeURI(acent + csvString);
-  element.target = "_blank";
-  element.download = "notes.csv";
-  element.click();
-}
-
 //! Eventos
 addNoteBtn.addEventListener("click", () => addNote());
 
@@ -234,8 +211,9 @@ noteInput.addEventListener("keydown", (e) => {
 });
 
 exportBtn.addEventListener("click", () => {
-  exportData();
-});
+  exportBtn
+  
+})
 
 //! Inicialização
 

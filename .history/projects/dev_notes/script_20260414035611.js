@@ -194,28 +194,8 @@ function searchNotes(search) {
   showNotes();
 }
 
-function exportData() {
-  const notes = getNotes();
-
-  const csvString = [
-    ["ID", "Conteúdo", "Fixado?"],
-
-    ...notes.map((note) => [
-      note.id,
-      `"${note.content.replace(/"/g, '""')}"`, // trata texto
-      note.fixed ? "Sim" : "Não", // mais legível
-    ]),
-  ]
-    .map((e) => e.join(";"))
-    .join("\n");
-
-  const acent = "\uFEFF"; // resolve acentuação
-
-  const element = document.createElement("a");
-  element.href = "data:text/csv;charset=utf-8," + encodeURI(acent + csvString);
-  element.target = "_blank";
-  element.download = "notes.csv";
-  element.click();
+function exportData(){
+  const notes=
 }
 
 //! Eventos

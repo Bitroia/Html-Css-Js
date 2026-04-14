@@ -196,8 +196,8 @@ function searchNotes(search) {
 
 function exportData() {
   const notes = getNotes();
-
-  const csvString = [
+  
+    const csvString = [
     ["ID", "Conteúdo", "Fixado?"],
 
     ...notes.map((note) => [
@@ -209,10 +209,10 @@ function exportData() {
     .map((e) => e.join(";"))
     .join("\n");
 
-  const acent = "\uFEFF"; // resolve acentuação
+     const BOM = "\uFEFF"; // 👈 resolve acentuação
 
   const element = document.createElement("a");
-  element.href = "data:text/csv;charset=utf-8," + encodeURI(acent + csvString);
+  element.href = "data:text/csv;charset=utf-8," + encodeURI(csvString);
   element.target = "_blank";
   element.download = "notes.csv";
   element.click();

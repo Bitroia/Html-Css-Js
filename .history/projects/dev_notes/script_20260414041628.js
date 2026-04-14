@@ -212,7 +212,7 @@ function exportData() {
   const acent = "\uFEFF"; // resolve acentuação
 
   const element = document.createElement("a");
-  element.href = "data:text/csv;charset=utf-8," + encodeURI(acent + csvString);
+  element.href = "data:text/csv;charset=utf-8," + encodeURI(BOM + csvString);
   element.target = "_blank";
   element.download = "notes.csv";
   element.click();
