@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: #18181b;
+  background-color: #18181B;
   padding-bottom: 500px;
 }
 
@@ -72,7 +72,6 @@ h2 {
 
 .reference-input p {
   margin-left: 4px;
-  color: #fff;
 }
 
 .form-control input[type="text"] {
@@ -82,19 +81,18 @@ h2 {
   text-align: center;
 }
 
-#color-value {
+#color-value{
   min-width: 100px;
 }
 
-#inset {
+#inset{
   align-self: start;
-  height: 20px;
-  width: 20px;
 }
+
 
 /* Preview */
 
-#box {
+#box{
   width: 100%;
   height: 300px;
   background-color: #e9e60a;
@@ -102,30 +100,17 @@ h2 {
 
 /* Área de geração */
 
-#generated-rule {
+#generated-rule{
   text-align: center;
 }
 
-#generated-rule p {
+#generated-rule p{
   margin-bottom: 0.5rem;
 }
 
-#rules-area {
+#rules-area{
   background-color: #d3d3d3;
   max-width: 1000px;
   margin: 0 auto;
   border: 2px solid #e9e60a;
-  cursor: pointer;
-  transition: 0.4s;
-}
-
-
-#rules-area:hover{
-  background-color: #dfdfdf;
-}
-
-#copy-instructions{
-  margin-top: 1rem;
-  color: #fff;
-  font-style: italic;
 }

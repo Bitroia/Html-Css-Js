@@ -72,7 +72,6 @@ h2 {
 
 .reference-input p {
   margin-left: 4px;
-  color: #fff;
 }
 
 .form-control input[type="text"] {
@@ -115,8 +114,6 @@ h2 {
   max-width: 1000px;
   margin: 0 auto;
   border: 2px solid #e9e60a;
-  cursor: pointer;
-  transition: 0.4s;
 }
 
 
@@ -125,7 +122,5 @@ h2 {
 }
 
 #copy-instructions{
-  margin-top: 1rem;
-  color: #fff;
-  font-style: italic;
+  margin-top: 4px;
 }

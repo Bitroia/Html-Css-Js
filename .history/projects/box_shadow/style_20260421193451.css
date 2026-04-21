@@ -116,7 +116,7 @@ h2 {
   margin: 0 auto;
   border: 2px solid #e9e60a;
   cursor: pointer;
-  transition: 0.4s;
+  tra
 }
 
 
@@ -125,7 +125,6 @@ h2 {
 }
 
 #copy-instructions{
-  margin-top: 1rem;
+  margin-top: 10px;
   color: #fff;
-  font-style: italic;
 }

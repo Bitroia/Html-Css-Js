@@ -54,13 +54,11 @@ class BoxShadowGenerator {
         break;
       case "vertical":
         this.verticalRef.value = value;
-        break;
+        break
       case "blur":
         this.blurRef.value = value;
-        break;
       case "spread":
         this.spreadRef.value = value;
-        break;
     }
 
     this.applyRule();
@@ -98,7 +96,7 @@ const boxShadow = new BoxShadowGenerator(
   mozRule,
 );
 
- boxShadow.initialize();
+boxShadow.initialize();
 
 // ! Eventos
 

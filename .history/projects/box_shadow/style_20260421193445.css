@@ -115,8 +115,7 @@ h2 {
   max-width: 1000px;
   margin: 0 auto;
   border: 2px solid #e9e60a;
-  cursor: pointer;
-  transition: 0.4s;
+  cur
 }
 
 
@@ -125,7 +124,6 @@ h2 {
 }
 
 #copy-instructions{
-  margin-top: 1rem;
+  margin-top: 10px;
   color: #fff;
-  font-style: italic;
 }

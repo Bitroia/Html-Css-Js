@@ -98,7 +98,7 @@ const boxShadow = new BoxShadowGenerator(
   mozRule,
 );
 
- boxShadow.initialize();
+ //boxShadow.initialize();
 
 // ! Eventos
 
