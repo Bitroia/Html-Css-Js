@@ -56,7 +56,7 @@ class BoxShadowGenerator {
     console.log(this.insetRef)
 
 
-    const shadowRule = `${this.insetRef ? "inset " : ""}${this.horizontalRef.value}px ${this.verticalRef.value}px ${this.blurRef.value}px ${this.spreadRef.value}px rgba(${rgbValue}, ${this.opacityRef.value})`;
+    const shadowRule = `${this.insetRef ? "inse " : ""}${this.horizontalRef.value}px ${this.verticalRef.value}px ${this.blurRef.value}px ${this.spreadRef.value}px rgba(${rgbValue}, ${this.opacityRef.value})`;
 
     this.previewBox.style.boxShadow = shadowRule;
     this.currentRule = shadowRule;

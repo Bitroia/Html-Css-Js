@@ -31,7 +31,7 @@ class BoxShadowGenerator {
     this.opacity = opacity;
     this.opacityRef = opacityRef;
     this.inset = inset;
-    this.insetRef = inset.checked;
+    this.insetRef = this.insetRef
     this.previewBox = previewBox;
     this.rule = rule;
     this.webkitRule = webkitRule;
@@ -53,10 +53,7 @@ class BoxShadowGenerator {
   applyRule() {
     const rgbValue = this.hexToRgb(this.colorRef.value);
 
-    console.log(this.insetRef)
-
-
-    const shadowRule = `${this.insetRef ? "inset " : ""}${this.horizontalRef.value}px ${this.verticalRef.value}px ${this.blurRef.value}px ${this.spreadRef.value}px rgba(${rgbValue}, ${this.opacityRef.value})`;
+    const shadowRule = `${this.insetRef ? "inset" : ""}${this.horizontalRef.value}px ${this.verticalRef.value}px ${this.blurRef.value}px ${this.spreadRef.value}px rgba(${rgbValue}, ${this.opacityRef.value})`;
 
     this.previewBox.style.boxShadow = shadowRule;
     this.currentRule = shadowRule;
@@ -88,8 +85,8 @@ class BoxShadowGenerator {
       case "opacity":
         this.opacityRef.value = value;
         break;
-      case "inset":
-        this.insetRef = value;
+        case "inset":
+        this.insetRef.value = value;
         break;
     }
 
@@ -183,7 +180,7 @@ opacity.addEventListener("input", (e) => {
   boxShadow.updateValue("opacity", value);
 });
 
-inset.addEventListener("change", (e) => {
+inset.addEventListener("input", (e) => {
   const value = e.target.checked;
 
   boxShadow.updateValue("inset", value);
