@@ -1,0 +1,35 @@
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h2{
+    margin-bottom: 1.6rem;
+    text-align: center;
+    color: #333;
+}
+
+#box-shadow-generator{
+display: flex;
+max-width: 1000px;
+margin: 0 auto;
+}
+
+#controls-container, #preview{
+    flex: 1;
+    padding: 2rem;
+}
+
+/* Controles */
+
+.form-control{
+    display: flex;
+    padding-bottom: 1.2rem;
+    margin-bottom: 1.2rem;
+    border-bottom: 1px dashed #;
+}
+
+body{
+    background-color: #665e5e;
+}
