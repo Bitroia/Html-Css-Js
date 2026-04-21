@@ -6,7 +6,7 @@
 
 body {
   background-color: #18181b;
-  padding-bottom: 50px;
+  padding-bottom: 500px;
 }
 
 h2 {
@@ -143,12 +143,7 @@ h2 {
   }
 
   #generated-rule{
-    margin-top: 2rem;
-  }
-
-  #rules-area{
-    padding: 1rem;
-    margin: 1.5rem;
+    
   }
 
   #controls-container,

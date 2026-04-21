@@ -42,19 +42,13 @@ class BoxShadowGenerator {
     this.verticalRef.value = this.vertical.value;
     this.blurRef.value = this.blur.value;
     this.spreadRef.value = this.spread.value;
-    this.colorRef.value = this.color.value;
-
     this.applyRule();
     this.showRule();
   }
 
   applyRule() {
-    const rgbValue = this.hexToRgb(this.colorRef.value);
-
-    const shadowRule = `${this.horizontalRef.value}px ${this.verticalRef.value}px ${this.blurRef.value}px ${this.spreadRef.value}px rgba(${rgbValue})`;
-
-    this.previewBox.style.boxShadow = shadowRule;
-    this.currentRule = shadowRule;
+    this.previewBox.style.boxShadow = `${this.horizontalRef.value}px ${this.verticalRef.value}px ${this.blurRef.value}px ${this.spreadRef.value}px #000000`;
+    this.currentRule = this.previewBox.style.boxShadow;
   }
 
   showRule() {
@@ -79,15 +73,11 @@ class BoxShadowGenerator {
         break;
       case "color":
         this.colorRef.value = value;
-        break;
+        break
     }
 
     this.applyRule();
     this.showRule();
-  }
-
-  hexToRgb(hex) {
-    return `${("0x" + hex[1] + hex[2]) | 0}, ${("0x" + hex[3] + hex[4]) | 0}, ${("0x" + hex[5] + hex[6]) | 0}`;
   }
 }
 
@@ -131,7 +121,7 @@ const boxShadow = new BoxShadowGenerator(
   webkitRule,
   mozRule,
 );
-
+console.log(boxShadow);
 boxShadow.initialize();
 
 // ! Eventos

@@ -53,8 +53,8 @@ class BoxShadowGenerator {
 
     const shadowRule = `${this.horizontalRef.value}px ${this.verticalRef.value}px ${this.blurRef.value}px ${this.spreadRef.value}px rgba(${rgbValue})`;
 
-    this.previewBox.style.boxShadow = shadowRule;
-    this.currentRule = shadowRule;
+    this.previewBox.style.boxShadow = shadowRule();
+    this.currentRule = this.previewBox.style.boxShadow;
   }
 
   showRule() {

@@ -6,7 +6,7 @@
 
 body {
   background-color: #18181b;
-  padding-bottom: 50px;
+  padding-bottom: 500px;
 }
 
 h2 {
@@ -132,27 +132,5 @@ h2 {
 /* Responsividade */
 
 @media (max-width: 425px) {
-  #box-shadow-generator {
-    flex-direction: column;
-  }
-
-  #box {
-    width: 60%;
-    height: 200px;
-    margin: 0 auto;
-  }
-
-  #generated-rule{
-    margin-top: 2rem;
-  }
-
-  #rules-area{
-    padding: 1rem;
-    margin: 1.5rem;
-  }
-
-  #controls-container,
-  #preview {
-    padding: 1rem 2rem;
-  }
+  #
 }
