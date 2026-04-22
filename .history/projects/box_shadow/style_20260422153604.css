@@ -53,7 +53,7 @@ h2 {
   appearance: none;
   width: 100%;
   height: 24px;
-  background-color: #ffff;
+  background-color: #d3d3d3;
   outline: none;
 }
 .range-input input[type="range"]::-webkit-slider-thumb {
@@ -72,7 +72,7 @@ h2 {
 
 .reference-input p {
   margin-left: 4px;
-  color: #1d1816;
+  color: #fff;
 }
 
 .form-control input[type="text"] {
@@ -125,7 +125,7 @@ h2 {
 
 #copy-instructions {
   margin-top: 1rem;
-  color: #1d1816;
+  color: #fff;
   font-style: italic;
 }
 

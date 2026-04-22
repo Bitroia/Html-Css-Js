@@ -199,8 +199,7 @@ rulesArea.addEventListener("click", () => {
     copyInstructions.innerText = "Regra copiada com sucesso!";
 
     setTimeout(() => {
-      copyInstructions.innerText =
-        "Clique no quadro acima para copiar as regras";
-    },1000);
+      copyInstructions.innerText
+    })
   });
 });

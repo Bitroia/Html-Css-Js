@@ -201,6 +201,6 @@ rulesArea.addEventListener("click", () => {
     setTimeout(() => {
       copyInstructions.innerText =
         "Clique no quadro acima para copiar as regras";
-    },1000);
+    });
   });
 });

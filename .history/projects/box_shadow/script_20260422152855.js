@@ -195,12 +195,5 @@ const copyInstructions = document.querySelector("#copy-instructions");
 
 rulesArea.addEventListener("click", () => {
   const rules = rulesArea.innerText.replace(/^\s*\n/gm, "");
-  navigator.clipboard.writeText(rules).then(() => {
-    copyInstructions.innerText = "Regra copiada com sucesso!";
-
-    setTimeout(() => {
-      copyInstructions.innerText =
-        "Clique no quadro acima para copiar as regras";
-    },1000);
-  });
+  navigator.clipboard
 });

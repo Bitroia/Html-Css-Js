@@ -53,7 +53,8 @@ class BoxShadowGenerator {
   applyRule() {
     const rgbValue = this.hexToRgb(this.colorRef.value);
 
-    console.log(this.insetRef);
+    console.log(this.insetRef)
+
 
     const shadowRule = `${this.insetRef ? "inset " : ""}${this.horizontalRef.value}px ${this.verticalRef.value}px ${this.blurRef.value}px ${this.spreadRef.value}px rgba(${rgbValue}, ${this.opacityRef.value})`;
 
@@ -188,19 +189,15 @@ inset.addEventListener("change", (e) => {
   boxShadow.updateValue("inset", value);
 });
 
+
 //! Copiar Regra
 
-const rulesArea = document.querySelector("#rules-area");
-const copyInstructions = document.querySelector("#copy-instructions");
+const rulesArea = document.querySelector("#rules-area")
+const copyInstructions = document.querySelector("#copy-instructions")
 
-rulesArea.addEventListener("click", () => {
-  const rules = rulesArea.innerText.replace(/^\s*\n/gm, "");
-  navigator.clipboard.writeText(rules).then(() => {
-    copyInstructions.innerText = "Regra copiada com sucesso!";
+rulesArea.addEventListener("click", ()  => {
+  const rules = rulesArea.innerText.replace(/^\s*\
+  );
 
-    setTimeout(() => {
-      copyInstructions.innerText =
-        "Clique no quadro acima para copiar as regras";
-    },1000);
-  });
-});
+  console.log(rules)
+})
