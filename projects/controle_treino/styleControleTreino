@@ -4,7 +4,7 @@
   font-family: Arial, Helvetica, sans-serif;
   box-sizing: border-box;
 }
-/*continuar a simplificando regras de botão*/
+
 body {
   background-color: #959595;
 }
@@ -40,7 +40,6 @@ h1 {
   background-color: #3e3e3e;
   border: none;
   padding: 8px 12px;
-  
 }
 
 li {
@@ -58,15 +57,14 @@ li {
   transition: all 0.3s ease;
 }
 
-button{
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 4px;
+button {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
 }
 
 button:hover {
   opacity: 0.9;
 }
-
 
 .exercise span {
   flex: 1;
@@ -88,13 +86,46 @@ button:hover {
   transform: translateX(40px);
 }
 
-.done-btn {
+.done-btn, .save-btn  {
   background-color: #4caf50;
   color: white;
   border: none;
   padding: 5px 10px;
   cursor: pointer;
   margin-left: 5px;
+}
+
+li.editing button {
+  pointer-events: none;
+  opacity: 0.3;
+}
+
+li.editing .save-btn {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.container.editing *:not(.editing):not(.editing *) {
+  pointer-events: none;
+}
+
+button:disabled input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+button:disabled {
+  background-color: #ccc;
+  color: #666;
+  border: 1px solid #aaa;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.disabled {
+  opacity: 0.5;
+  pointer-events: none;
 }
 
 #finish-container {
@@ -141,7 +172,6 @@ button:hover {
 .hidden {
   display: none;
 }
-
 
 .alertBox {
   position: fixed;
