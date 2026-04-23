@@ -1,4 +1,4 @@
-//Selecionando elementos
+//! Selecionando elementos
 
 const inputExercise = document.querySelector("#input-exercise");
 const btnInput = document.querySelector("#btnInput");
@@ -8,190 +8,7 @@ const btnTermino = document.querySelector("#btn-termino");
 const alertBox = document.querySelector("#alertBox");
 const doneCount = document.querySelector("#doneCount");
 
-//Adicionando treino
-btnInput.addEventListener("click", function (event) {
-  event.preventDefault();
-
-  //Limpando espaços desnecessários em input
-
-  const texto = inputExercise.value.trim();
-
-  //verificando se o input ta vazio
-
-  if (texto === "") {
-    alert("O campo não pode ficar vazio!");
-    inputExercise.focus();
-    return;
-  }
-
-  const exercise = {
-    id: Date.now(), // ID único
-    text: texto,
-    done: false,
-  };
-
-   // cria na tela
-  saveExercise(exercise.text, exercise.done, exercise.id);
-
-  // salva no localStorage
-  saveExerciseLocalStorage(exercise);
-
-  inputExercise.value = "";
-  updateCounter(); //revisar se é isso msm
-
-  //Adicionando elementos
-
-  const li = document.createElement("li");
-  li.classList.add("exercise");
-
-  const span = document.createElement("span");
-  span.textContent = texto;
-
-  const doneBtn = document.createElement("button");
-  doneBtn.classList.add("done-btn");
-  doneBtn.innerHTML = '<i class="fa-solid fa-check"></i>';
-
-  const deleteBtn = document.createElement("button");
-  deleteBtn.classList.add("delete-btn");
-  deleteBtn.innerHTML = '<i class="fa-solid fa-remove"></i>';
-
-  const editButton = document.createElement("button");
-  editButton.classList.add("edit-btn");
-  editButton.innerHTML = '<i class="fa-solid fa-edit"></i>';
-
-  li.appendChild(span);
-  li.appendChild(doneBtn);
-  li.appendChild(deleteBtn);
-  li.appendChild(editButton);
-
-  list.appendChild(li); //adiciona o exercicio se o input tiver conteúdo
-
-  inputExercise.value = ""; //limpa o input depois de add
-  updateCounter(); //atualiza a contagem
-});
-
-list.addEventListener("click", function (event) {
-  const editingItem = document.querySelector(".editing");
-
-  // trava tudo se estiver editando outro item
-  if (editingItem && !event.target.closest(".editing")) {
-    return;
-  }
-
-  const doneBtn = event.target.closest(".done-btn");
-  const deleteBtn = event.target.closest(".delete-btn");
-  const editBtn = event.target.closest(".edit-btn");
-  const saveBtn = event.target.closest(".save-btn");
-
-  if (saveBtn) {
-    const li = saveBtn.closest("li");
-    const span = li.querySelector("span");
-    const novoTexto = span.textContent.trim();
-
-    if (novoTexto === "") {
-      alert("O campo não pode ficar vazio!");
-      return;
-    }
-
-    span.contentEditable = false;
-    li.classList.remove("editing");
-
-    // volta botão para editar
-    saveBtn.classList.remove("save-btn");
-    saveBtn.classList.add("edit-btn");
-    saveBtn.innerHTML = '<i class="fa-solid fa-edit"></i>';
-  }
-
-  // Marcar como concluido
-  if (doneBtn) {
-    const li = doneBtn.closest("li");
-    li.classList.toggle("completed");
-
-    updateCounter();
-  }
-
-  //Deletar exercicio
-
-  if (deleteBtn) {
-    const li = deleteBtn.closest("li");
-    const confirmDelete = confirm(
-      "Tem certeza que deseja eliminar este exercício?",
-    );
-
-    if (confirmDelete) {
-      li.classList.add("removing");
-
-      setTimeout(function () {
-        li.remove();
-        updateCounter();
-        showAlert("Exercício eliminado!");
-      }, 300);
-    }
-  }
-
-  if (editBtn) {
-    const li = editBtn.closest("li");
-    const span = li.querySelector("span");
-
-    const textoAtual = span.textContent;
-
-    //ativa edição
-
-    span.contentEditable = true;
-    li.classList.add("editing");
-    span.focus();
-
-    // transforma botão em salvar
-    editBtn.classList.remove("edit-btn");
-    editBtn.classList.add("save-btn");
-    editBtn.innerHTML = '<i class="fa-solid fa-check"></i>';
-
-    //proteção contra texto estranho colado pelo usuario
-
-    span.addEventListener("paste", (e) => {
-      e.preventDefault();
-      const text = e.clipboardData.getData("text/plain");
-      document.execCommand("insertText", false, text);
-    });
-
-    //salvar ao sair do input
-    span.addEventListener("blur", () => {
-      span.contentEditable = false;
-      li.classList.remove("editing");
-
-      const novoTexto = span.textContent.trim();
-
-      if (novoTexto === "") {
-        alert("O campo não pode ficar vazio!");
-        span.textContent = "Exercício";
-      }
-    });
-
-    span.addEventListener("keydown", (e) => {
-      if (e.key === "Enter") {
-        e.preventDefault();
-        span.blur();
-      }
-    });
-  }
-});
-
-btnTermino.addEventListener("click", () => {
-  //Habilitando mensagem de confirmação
-  if (isCompleteWorkout()) {
-    const confirmTermination = confirm("Parabens!");
-  } else {
-    const confirmTermination = confirm(
-      "Você não completou o treino, deseja encerrar?",
-    );
-
-    if (confirmTermination) {
-      showAlert("Treino encerrado incompleto!");
-    }
-  }
-});
-
-//Funções
+//! Funções
 
 function getWorkoutStatus() {
   const allExercises = document.querySelectorAll(".exercise");
@@ -222,8 +39,210 @@ function showAlert(message) {
 
   setTimeout(function () {
     alertBox.classList.remove("show");
-  }, 3000); //resolver alert box contando 1 a mais
+  }, 3000);
 }
+
+function saveExercise(text, done = false, id = 0) {
+  const li = document.createElement("li");
+  li.classList.add("exercise");
+  li.setAttribute("data-id", id);
+
+  const span = document.createElement("span");
+  span.textContent = text;
+
+  if (done) {
+    li.classList.add("completed");
+  }
+
+  const doneBtn = document.createElement("button");
+  doneBtn.classList.add("done-btn");
+  doneBtn.innerHTML = '<i class="fa-solid fa-check"></i>';
+
+  const deleteBtn = document.createElement("button");
+  deleteBtn.classList.add("delete-btn");
+  deleteBtn.innerHTML = '<i class="fa-solid fa-remove"></i>';
+
+  const editButton = document.createElement("button");
+  editButton.classList.add("edit-btn");
+  editButton.innerHTML = '<i class="fa-solid fa-edit"></i>';
+
+  li.appendChild(span);
+  li.appendChild(doneBtn);
+  li.appendChild(deleteBtn);
+  li.appendChild(editButton);
+
+  list.appendChild(li);
+}
+
+//! Eventos
+
+btnInput.addEventListener("click", function (event) {
+  event.preventDefault();
+
+  const texto = inputExercise.value.trim();
+
+  if (texto === "") {
+    alert("O campo não pode ficar vazio!");
+    inputExercise.focus();
+    return;
+  }
+
+  const exercise = {
+    id: Date.now(),
+    text: texto,
+    done: false,
+  };
+
+  //**  Cria na tela
+  saveExercise(exercise.text, exercise.done, exercise.id);
+
+  //** Salva no localStorage
+  saveExerciseLocalStorage(exercise);
+
+  //** Limpa o input depois de add e atualiza a contagem
+  inputExercise.value = "";
+  updateCounter();
+});
+
+btnTermino.addEventListener("click", () => {
+  //** Habilitando mensagem de confirmação
+  if (isCompleteWorkout()) {
+    const confirmTermination = confirm("Parabens!");
+  } else {
+    const confirmTermination = confirm(
+      "Você não completou o treino, deseja encerrar?",
+    );
+
+    if (confirmTermination) {
+      showAlert("Treino encerrado incompleto!");
+    }
+  }
+});
+
+list.addEventListener("click", function (event) {
+  const editingItem = document.querySelector(".editing");
+
+  //** Trava tudo se estiver editando outro item
+  if (editingItem && !event.target.closest(".editing")) {
+    return;
+  }
+
+  const doneBtn = event.target.closest(".done-btn");
+  const deleteBtn = event.target.closest(".delete-btn");
+  const editBtn = event.target.closest(".edit-btn");
+  const saveBtn = event.target.closest(".save-btn");
+
+  if (saveBtn) {
+    const li = saveBtn.closest("li");
+    const span = li.querySelector("span");
+    const novoTexto = span.textContent.trim();
+
+    if (novoTexto === "") {
+      alert("O campo não pode ficar vazio!");
+      return;
+    }
+
+    const id = Number(li.getAttribute("data-id"));
+    updateExerciseLocalStorage(id, novoTexto);
+
+    //** Desativa edição
+    span.contentEditable = false;
+    li.classList.remove("editing");
+
+    //** Volta botão para editar
+    saveBtn.classList.remove("save-btn");
+    saveBtn.classList.add("edit-btn");
+    saveBtn.innerHTML = '<i class="fa-solid fa-edit"></i>';
+  }
+
+  //** Marcar como concluido
+  if (doneBtn) {
+    const li = doneBtn.closest("li");
+    const id = Number(li.getAttribute("data-id"));
+    li.classList.toggle("completed");
+
+    updateExerciseStatusLocalStorage(id);
+
+    updateCounter();
+  }
+
+  //** Deletar exercicio
+
+  if (deleteBtn) {
+    const li = deleteBtn.closest("li");
+    const confirmDelete = confirm(
+      "Tem certeza que deseja eliminar este exercício?",
+    );
+
+    if (confirmDelete) {
+      li.classList.add("removing");
+
+      setTimeout(function () {
+        const id = Number(li.getAttribute("data-id"));
+        removeExerciseLocalStorage(id);
+        li.remove();
+        updateCounter();
+        showAlert("Exercício eliminado!");
+      }, 300);
+    }
+  }
+
+  if (editBtn) {
+    const li = editBtn.closest("li");
+    const span = li.querySelector("span");
+
+    //** Ativa edição
+
+    span.contentEditable = true;
+    li.classList.add("editing");
+    span.focus();
+
+    // ** Transforma botão em salvar
+    editBtn.classList.remove("edit-btn");
+    editBtn.classList.add("save-btn");
+    editBtn.innerHTML = '<i class="fa-solid fa-check"></i>';
+
+    //** Proteção contra texto estranho colado pelo usuario
+
+    span.onpaste = (e) => {
+      e.preventDefault();
+      const text = e.clipboardData.getData("text/plain");
+      document.execCommand("insertText", false, text);
+    };
+
+    //** Salvar ao sair do input
+    span.onblur = () => {
+      const novoTexto = span.textContent.trim();
+
+      if (novoTexto === "") {
+        alert("O campo não pode ficar vazio!");
+        span.textContent = "Exercício";
+        return;
+      }
+
+      const id = Number(li.getAttribute("data-id"));
+      updateExerciseLocalStorage(id, novoTexto);
+
+      span.contentEditable = false;
+      li.classList.remove("editing");
+
+      const saveBtn = li.querySelector(".save-btn");
+
+      if (saveBtn) {
+        saveBtn.classList.remove("save-btn");
+        saveBtn.classList.add("edit-btn");
+        saveBtn.innerHTML = '<i class="fa-solid fa-edit"></i>';
+      }
+    };
+
+    span.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        span.blur();
+      }
+    });
+  }
+});
 
 //! Local Storage
 
@@ -236,8 +255,10 @@ const loadExercises = () => {
   const exercises = getExerciseLocalStorage();
 
   exercises.forEach((exercise) => {
-    saveExercise(exercise.text, exercise.done, 0);
+    saveExercise(exercise.text, exercise.done, exercise.id);
   });
+
+  updateCounter();
 };
 
 const saveExerciseLocalStorage = (exercise) => {
@@ -260,7 +281,7 @@ const updateExerciseStatusLocalStorage = (id) => {
   exercises.forEach((ex) => {
     if (ex.id === id) {
       ex.done = !ex.done;
-    } //certo
+    }
   });
 
   localStorage.setItem("exercises", JSON.stringify(exercises));
@@ -269,11 +290,11 @@ const updateExerciseStatusLocalStorage = (id) => {
 const updateExerciseLocalStorage = (id, newText) => {
   const exercises = getExerciseLocalStorage();
 
-  exercise.forEach((ex) => {
+  exercises.forEach((ex) => {
     if (ex.id === id) {
       ex.text = newText;
     }
-  }); //certo
+  });
 
   localStorage.setItem("exercises", JSON.stringify(exercises));
 };
